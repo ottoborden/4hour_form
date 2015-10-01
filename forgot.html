@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Forgot Login Credentials</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    </head>
+
+    <body ng-app="testApp">
+        <div class="container">
+
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+
+                    <div class="panel-heading">
+                        <h1>Forgot</h1>
+                    </div>
+
+                    <div class="panel-body">
+                        <form id="forgotForm" action="success.html" ng-controller="ForgotController" name="ForgotForm">
+
+                            <div class="input-group" ng-class="{ 'has-error': ForgotForm.email.$touched && ForgotForm.email.$invalid }">
+                                <span class="input-group-addon">Email </span>
+                                <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        class="form-control"
+                                        ng-model="email"
+                                        ng-pattern="emailPattern"
+                                        required />
+                            </div>
+                            <div ng-messages="ForgotForm.email.$error" ng-if="ForgotForm.email.$touched">
+                                <div ng-message="pattern">Your email address is invalid</div>
+                                <div ng-message="required">Email is required</div>
+                            </div>
+
+                            <br />
+
+                            <input class="btn btn-success" type="submit" value="Submit"/>
+                        </form>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <a href="index.html" class="">
+                                    <p class="text-left">
+                                        <small>Login</small>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="angular-messages.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>
